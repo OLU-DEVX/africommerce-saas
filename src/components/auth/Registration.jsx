@@ -50,7 +50,7 @@ const Registration = () => {
         // Handle registration error
       });
   };
-  
+
   return (
     <Box
       sx={{
@@ -82,28 +82,30 @@ const Registration = () => {
           Create an Account
         </Typography>
         <form
-          onSubmit={submitHandler}
+          onSubmit={handleSubmit}
           style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
         >
-          <TextField
-            id="filled-disabled"
+           <TextField
             label="Username"
-            required
+            name="username"
             type="text"
-            value={username}
             variant="outlined"
-            onChange={(e) => setUsername(e.target.value)}
-            size="small"
+            required
+            value={formData.username}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
           />
-          <TextField
-            id="filled-disabled"
+         <TextField
             label="First Name"
+            name="firstname"
             type="text"
             variant="outlined"
             required
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-            size="small"
+            value={formData.firstname}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
           />
           <TextField
             id="filled-disabled"
@@ -191,6 +193,7 @@ const Registration = () => {
                 backgroundColor: '#dd2c04',
               },
             }}
+            fullWidth
           >
             Create Account
           </Button>
