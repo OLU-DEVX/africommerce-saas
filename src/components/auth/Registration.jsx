@@ -8,7 +8,7 @@ import {
   Alert,
   AlertTitle,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Registration = () => {
@@ -21,7 +21,8 @@ const Registration = () => {
     password: '',
     confirmPassword: '',
   });
-
+  
+  const navigate = useNavigate();
   const [isInvalid, setIsInvalid] = useState(false);
 
   const handleChange = (e) => {
